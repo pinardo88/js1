@@ -27,7 +27,13 @@
             //check if valid numeric answer
             while(true){
                 numChildren = prompt("How many children do you have?");
-                if(!isNaN(Number(numChildren))) break;
+                if(!isNaN(Number(numChildren)) && notDecimal(numChildren)) break;
+            }
+
+            //double check it's not a decimal as well
+            function notDecimal(number){
+                if(number[0] == ".") return false;
+                return true;
             }
 
             const answerTxtElem = document.getElementById("answerTxt");
