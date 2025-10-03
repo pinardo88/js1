@@ -1,0 +1,38 @@
+<!-- Problem 2:  
+        Ask the user to enter the value of a temperature in Fahrenheit
+        using prompt(). Convert to Celsius and display the result in a popup.
+        Now ask for the temperature in Celsius, convert it to Fahrenheit, 
+        and display the result in a popup. You may look up the conversion 
+        formulas online.
+        
+        Here is one that may be helpful:
+        https://www.uptodate.com/contents/calculator-temperature-unit-conversions#:~:text=Temperature%20conversions%20use%20the%20following,*%209%2F5)%20%2B%2032
+        Links to an external site.
+        You do not have to format the output in any special way.  -->
+
+<html>
+    <head></head>
+    <body>
+        <script>
+            let tempF;
+            while(true){
+                tempF = prompt("Temperature in Fahrenheit: ");
+                if(!isNaN(Number(tempF))) break;
+            }
+
+            // °C = (°F - 32) × 5/9
+            var tempC = (Number(tempF)-32)*(5/9);
+            alert("Temperature in Celsius: " + tempC.toFixed(2));
+
+            let tempC2;
+            while(true){
+                tempC2 = prompt("Temperature in Celsius: ")
+                if(!isNaN(Number(tempC2))) break;
+            }
+            
+            // °F = (°C × 9/5) + 32
+            const tempF2 = (Number(tempC2)*(9/5)+32);
+            alert("Temperature in Fahrenheit: " + tempF2.toFixed(2));
+        </script>
+    </body>
+</html>

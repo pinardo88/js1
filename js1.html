@@ -1,0 +1,44 @@
+<!-- Problem 1:  Ask the user for their first name.
+            Now ask the user for their last name.
+            (You will need to use prompt() twice).
+            
+            Display the response in a popup (alert) as: 
+            "Your name is <name>" - filling in their full name. 
+
+            Now ask the user for the number of children they have.
+            Display the number of children on the page as a grammatically
+            correct sentence ( “You have no children”, “You have 1 child” or
+            “You have 2 children”, etc). Note - this should be displayed on the
+            page (not in a popup) -->
+
+<html>
+    <head></head>
+    <body>
+        <p id="answerTxt"></p>
+        <script>
+            // ask for name
+            const firstName = prompt("What is your name?");
+            const lasttName = prompt("What is your name?");
+            alert("Your name is " + firstName + " " + lasttName);
+
+            //ask for children
+            let numChildren;
+
+            //check if valid numeric answer
+            while(true){
+                numChildren = prompt("How many children do you have?");
+                if(!isNaN(Number(numChildren))) break;
+            }
+
+            const answerTxtElem = document.getElementById("answerTxt");
+
+            if(numChildren == 0){
+                answerTxtElem.innerHTML = "You have no children";
+            } else if (numChildren == 1){
+                answerTxtElem.innerHTML = "You have 1 child";
+            } else {
+                answerTxtElem.innerHTML = "You have " + numChildren + " children";
+            }
+        </script>
+    </body>
+</html>

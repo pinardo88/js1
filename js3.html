@@ -1,0 +1,30 @@
+<!-- Problem 3:  Create a program that gets two numbers using prompt() and
+            displays them in the console in order (smallest to largest). 
+            You may not use arrays or a sort function
+            (other than what you create yourself) -->
+
+<html>
+    <head></head>
+    <body>
+        <h1> NUMBER SORTER MACHINE: </h1>
+        <p id="ans"></p>
+        <script>
+            
+            let num1;
+            while(true){
+                num1 = Number(prompt("Give me a number!"));
+                if(!isNaN(Number(num1))) break;
+            }
+
+            let num2;
+            while(true){
+                num2 = Number(prompt("Give me another number!"));
+                if(!isNaN(Number(num2))) break;
+            }
+
+            const ansElem = document.getElementById("ans");
+            ansElem.innerHTML = num1<num2 ? num1+ ", " + num2 : num2+ ", " + num1;
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!-- Problem 4:  Get two numbers from the user using prompt() that will represent
+a range (ex., 2 through 20).  Display all odd numbers in the range on the page. 
+Then display the sum of all of the numbers in the range on the page. 
+You must do this using only one loop. -->
+
+<html>
+    <head></head>
+    <body>
+        <h1>SUM OF ALL ODD NUMBERS IN RANGE: </h1>
+
+            <p>Odd numbers within range:</p>
+            <p id="ans"></p>
+
+            <p>Sum:</p>
+            <p id="sum"></p>
+
+        <script>
+            let num1;
+            while(true){
+                num1 = Number(prompt("From?"));
+                if(!isNaN(Number(num1))) break;
+            }
+
+            let num2;
+            while(true){
+                num2 = Number(prompt("Through?"));
+                if(!isNaN(Number(num2))) break;
+            }
+
+            let listOfNumbers = "";
+            let sumOfNumbers = 0;
+
+            // this program will include its ending range into the result
+
+            for(let i = num1; i<=num2; i++){
+                if (i % 2 != 0){
+                    sumOfNumbers += i;
+                    if(listOfNumbers == ""){
+                        listOfNumbers = String(i);
+                    } else {
+                        listOfNumbers = listOfNumbers + ", " + String(i);
+                    }
+                }
+            }
+
+            const ansItem = document.getElementById("ans");
+            const sumItem = document.getElementById("sum");
+
+            ansItem.innerHTML = listOfNumbers;
+            sumItem.innerHTML = String(sumOfNumbers);
+        </script>
+    </body>
+</html>
